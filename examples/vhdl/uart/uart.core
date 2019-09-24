@@ -1,0 +1,30 @@
+CAPI=2:
+name: vunit:examples-vhdl:uart
+description: A uart interface library
+filesets:
+  core:
+    files:
+      - src/uart_rx.vhd
+      - src/uart_tx.vhd
+    file_type: vhdlSource-2008
+    logical_name: uart_lib
+  core_tb:
+    files:
+      - src/test/tb_uart_rx.vhd
+      - src/test/tb_uart_tx.vhd
+    file_type: vhdlSource-2008
+
+targets:
+  default:
+    filesets:
+      - core
+  test:
+    filesets:
+      - core
+      - core_tb
+    toplevel: vunit
+    default_tool: vunit
+    tools:
+      vunit:
+        vunit_options: [--xunit-xml, "a:/dev/workspace/results.xml"]
+        add_libraries: [osvvm, verification_components]
