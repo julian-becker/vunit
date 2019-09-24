@@ -26,5 +26,5 @@ targets:
     default_tool: vunit
     tools:
       vunit:
-        vunit_options: [--xunit-xml, "a:/dev/workspace/results.xml"]
+        vunit_options: []
         add_libraries: [osvvm, verification_components]

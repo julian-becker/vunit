@@ -1,0 +1,19 @@
+CAPI=2:
+name: vunit:examples-vhdl:third_party_integration
+description: A test bench example showing how to integrate external assertion libraries into VUnit
+filesets:
+  core_tb:
+    files:
+      - test/tb_external_framework_integration.vhd
+    file_type: vhdlSource-2008
+
+targets:
+  test:
+    filesets:
+      - core_tb
+    toplevel: vunit
+    default_tool: vunit
+    tools:
+      vunit:
+        vunit_options: []
+        add_libraries: []
