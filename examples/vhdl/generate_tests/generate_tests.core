@@ -1,0 +1,27 @@
+CAPI=2:
+name: vunit:examples-vhdl:generate_tests
+description: Demonstrates generating multiple test runs of the same test bench with different generic values.
+filesets:
+  testbenches:
+    files:
+      - test/tb_generated.vhd
+    file_type: vhdlSource-2008
+    logical_name: lib
+
+  testrunner:
+    files:
+      - vunit_runner.py
+    file_type: pythonSource-3.7
+
+targets:
+  test:
+    filesets:
+      - testbenches
+      - testrunner
+    toplevel: vunit
+    default_tool: vunit
+    tools:
+      vunit:
+        vunit_runner: vunit_runner.py
+        vunit_options: []
+        add_libraries: []
