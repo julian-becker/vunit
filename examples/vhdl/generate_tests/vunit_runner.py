@@ -13,7 +13,7 @@ with different generic values. Also demonstrates use of ``output_path`` generic
 to create test bench output files in location specified by VUnit python runner.
 """
 
-from vunit_hooks import VUnitHooks as VH
+from edalize.vunit_hooks import VUnitHooks as VH
 from vunit import VUnit
 from vunit.ui import Library
 from typing import Mapping, Collection
@@ -66,7 +66,7 @@ def generate_tests(obj, signs, data_widths):
 
 
 class VUnitRunner(VH):
-    def handle_library(self, logical_name: str, vu_lib: Library, src_files: Collection[str]):
+    def handle_library(self, logical_name: str, vu_lib: Library):
         if logical_name == 'lib':
             tb_generated = vu_lib.test_bench("tb_generated")
 

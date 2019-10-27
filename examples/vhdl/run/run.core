@@ -4,15 +4,7 @@ description: Demonstrates the VUnit run library
 filesets:
   testbenches:
     files:
-      - tb_counting_errors.vhd
-      - tb_magic_paths.vhd
-      - tb_many_ways_to_fail.vhd
-      - tb_minimal.vhd
-      - tb_running_test_case.vhd
-      - tb_standalone.vhd
       - tb_with_lower_level_control.vhd
-      - tb_with_test_cases.vhd
-      - tb_with_watchdog.vhd
       - test_control.vhd
     file_type: vhdlSource-2008
     logical_name: lib
