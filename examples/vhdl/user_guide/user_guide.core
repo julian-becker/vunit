@@ -1,0 +1,21 @@
+CAPI=2:
+name: vunit:examples-vhdl:user_guide
+description: Brief vunit test-benches that serve as a user guide
+filesets:
+
+  core_tb:
+    files:
+      - tb_example_many.vhd
+      - tb_example.vhd
+    file_type: vhdlSource-2008
+
+targets:
+  test:
+    filesets:
+      - core_tb
+    toplevel: vunit
+    default_tool: vunit
+    tools:
+      vunit:
+        vunit_options: []
+        add_libraries: []
